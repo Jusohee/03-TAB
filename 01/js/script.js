@@ -26,8 +26,8 @@ $(function () {
     $tabMenu.eq(idx).addClass('on');
 
     // 모든 탭 콘텐츠를 다 숨기고
-    $tabContents.hide();
     // 클릭한 탭메뉴 인덱스에 해당하는 탭 콘텐츠만 보이게
+    $tabContents.hide();
     $tabContents.eq(idx).show();
   });
 });
