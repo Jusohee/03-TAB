@@ -6,26 +6,20 @@ $(function () {
   console.log($tabMenu, $tabContents);
 
   // 초기 세팅 : 탭 콘텐츠가 첫번쨰만 뺴고 다 숨겨져 있어야 함
-  tabAction();
+  tabAction(0);
   // 탭메뉴를 클릭했을 때
   $tabMenu.on('click', function () {
-    $tabMenu.removeClass('on');
-
     let idx = $(this).index();
 
-    $tabMenu.eq(idx).addClass('on');
-
-    $tabContents.hide();
-
-    $tabContents.eq(idx).show();
+    tabAction(idx);
   });
 
   // 중복되는 동작을 함수로 정의
-  function tabAction() {
+  function tabAction(index) {
     $tabContents.hide();
-    $tabContents.eq(0).show();
+    $tabContents.eq(index).show();
 
     $tabMenu.removeClass('on');
-    $tabMenu.eq(0).addClass('on');
+    $tabMenu.eq(index).addClass('on');
   }
 });
